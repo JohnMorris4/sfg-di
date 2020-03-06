@@ -1,22 +1,18 @@
 package com.morrisje.sfgdi.controllers;
 
-
 import com.morrisje.sfgdi.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class MyController {
+public class I18NController {
 
     private final GreetingService greetingService;
 
-    public MyController(GreetingService greetingService) {
+    public I18NController(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 
-    public String sayHello(){
-        // System.out.println("Hello John");
-
-
-        return greetingService.sayGreeting();
+    public String sayHello() {
+        greetingService.sayGreeting();
     }
 }

@@ -4,9 +4,9 @@ package com.morrisje.sfgdi.services;
 import org.springframework.stereotype.Service;
 
 @Service
-public class GreetingServiceImpl implements GreetingService {
+public class SetterGreetingServiceImpl implements GreetingService {
     @Override
     public String sayGreeting() {
-        return "Hello from Service";
+        return "Hello from Setter Service";
     }
 }

@@ -1,10 +1,8 @@
 package com.morrisje.sfgdi.controllers;
 
-import com.morrisje.sfgdi.services.GreetingServiceImpl;
+import com.morrisje.sfgdi.services.ConstructorGreetingServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterBasedControllerTest {
 
@@ -14,7 +12,7 @@ class SetterBasedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterBasedController();
-        controller.setGreeting(new GreetingServiceImpl());
+        controller.setGreeting(new ConstructorGreetingServiceImpl());
 
 
 
