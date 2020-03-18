@@ -16,4 +16,5 @@ public class PropertyInjectedController {
     public String getGreeting() {
         return greetingService.sayGreeting();
     }
+    public String sayHello(){ return greetingService.sayGreeting(); }
 }

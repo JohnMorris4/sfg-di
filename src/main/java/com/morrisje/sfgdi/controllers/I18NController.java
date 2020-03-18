@@ -13,6 +13,8 @@ public class I18NController {
     }
 
     public String sayHello() {
-        greetingService.sayGreeting();
+       return greetingService.sayGreeting();
+
+
     }
 }

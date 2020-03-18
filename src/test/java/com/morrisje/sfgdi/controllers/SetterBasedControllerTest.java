@@ -12,7 +12,7 @@ class SetterBasedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterBasedController();
-        controller.setGreeting(new ConstructorGreetingServiceImpl());
+        controller.setGreetingService(new ConstructorGreetingServiceImpl());
 
 
 
@@ -20,6 +20,6 @@ class SetterBasedControllerTest {
 
     @Test
     void getGreeting() {
-        System.out.println(controller.getGreeting());
+        System.out.println(controller.getGreetingService());
     }
 }

@@ -7,34 +7,23 @@ import com.morrisje.sfgdi.controllers.SetterBasedController;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+//@ComponentScan(basePackages = {"com.morrisje.services", "com.morrisje.sfgdi"})
 public class SfgDiApplication {
 
 	public static void main(String[] args) {
 
-		ApplicationContext context = SpringApplication.run(SfgDiApplication.class, args);
+		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
 
-		MyController myController = (MyController) context.getBean("myController");
+		MyController myController = (MyController) ctx.getBean("myController");
 
 		System.out.println("---- Primary Greeting Service");
 		System.out.println(myController.sayHello());
-
-		System.out.println("-------- Property Based -------");
-		PropertyInjectedController propertyInjectedController = (PropertyInjectedController) context
-				.getBean("propertyInjectedController");
-
-		System.out.println(propertyInjectedController.getGreeting());
-
-		System.out.println("------ Setter Based ------");
-		SetterBasedController setterBasedController = (SetterBasedController) context
-				.getBean("setterBasedController");
-		System.out.println(setterBasedController.getGreeting());
-
-		System.out.println("------- Constructor Based -------");
-		ConstructorInjectedController constructorInjectedController = (ConstructorInjectedController) context
-				.getBean("constructorInjectedController");
-		System.out.println(constructorInjectedController.getGreeting());
+		System.out.println(ctx.getBean(ConstructorInjectedController.class).sayHello());
+		System.out.println(ctx.getBean(PropertyInjectedController.class).sayHello());
+		System.out.println(ctx.getBean(SetterBasedController.class).sayHello());
 
 	}
 

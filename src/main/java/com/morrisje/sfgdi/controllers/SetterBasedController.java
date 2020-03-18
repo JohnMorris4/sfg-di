@@ -8,13 +8,14 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class SetterBasedController {
 
-    private GreetingService greeting;
+    private GreetingService greetingService;
 
     @Autowired
-    public void setGreeting(@Qualifier("setterGreetingServiceImpl") GreetingService greeting) {
-        this.greeting = greeting;
+    public void setGreetingService(@Qualifier("setterGreetingServiceImpl") GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
-    public String getGreeting() {
-        return greeting.sayGreeting();
+    public String getGreetingService() {
+        return greetingService.sayGreeting();
     }
+    public String sayHello(){ return greetingService.sayGreeting(); }
 }
